@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://4dxpn46olsd2"]
+
+[ext_resource type="Script" uid="uid://bvkdc8wjxodrt" path="res://Artifacts/Class/artifact_placeholder.gd" id="1_tnyy3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tnyy3"]
+height = 0.5703125
+radius = 0.52734375
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v3ghk"]
+top_radius = 0.50146484
+bottom_radius = 0.50146484
+height = 0.46533203
+
+[node name="Artifact1" type="Node3D" unique_id=822759224 node_paths=PackedStringArray("staticBody")]
+script = ExtResource("1_tnyy3")
+staticBody = NodePath("StaticBody3D")
+metadata/_custom_type_script = "uid://bvkdc8wjxodrt"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1941601788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20866376, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=943361538]
+shape = SubResource("CylinderShape3D_tnyy3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2143726511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20866376, 0)
+mesh = SubResource("CylinderMesh_v3ghk")

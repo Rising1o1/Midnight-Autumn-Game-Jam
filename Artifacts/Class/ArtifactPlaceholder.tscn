@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bqxfqv8hs2r1h"]
+
+[ext_resource type="Script" uid="uid://bvkdc8wjxodrt" path="res://Artifacts/Class/artifact_placeholder.gd" id="1_ton1p"]
+
+[node name="ArtifactPlaceholder" type="Node3D" unique_id=1912603467]
+script = ExtResource("1_ton1p")

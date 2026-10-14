@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cj7uu83y6n18i" path="res://Player/camera_3d.gd" id="1_3qydi"]
 [ext_resource type="Script" uid="uid://dmp2byr3loel2" path="res://Player/character_body_3d.gd" id="1_q3lat"]
+[ext_resource type="Script" uid="uid://mofdy1c0ir2c" path="res://Player/player.gd" id="1_tok1r"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gjkbx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_isk0n"]
 
 [node name="Player" type="Node3D" unique_id=2120135363]
+script = ExtResource("1_tok1r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=486929989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -23,3 +25,6 @@ shape = SubResource("CapsuleShape3D_isk0n")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=52077922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_3qydi")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1509864461]
+target_position = Vector3(0, 0, 0)

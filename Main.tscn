@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dcs2ttoj107s7"]
 
 [ext_resource type="PackedScene" uid="uid://dr1cer4ei5mp3" path="res://Player/Player.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://4dxpn46olsd2" path="res://Artifacts/artifact1.tscn" id="2_uu6xs"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_isk0n"]
+height = 5.4038086
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_isk0n"]
 
@@ -8,9 +12,22 @@
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 4.94
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_isk0n"]
-
 [node name="Node3D" type="Node3D" unique_id=1861753360]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=907052004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.024307, 0.055473328, 1.3285813)
+mesh = SubResource("CylinderMesh_isk0n")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=40582425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.593073, -0.893167, -0.8091693)
+mesh = SubResource("CylinderMesh_isk0n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1381668899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.024307, 2.5951757, -4.580148)
+mesh = SubResource("CylinderMesh_isk0n")
+
+[node name="Player" parent="." unique_id=2120135363 instance=ExtResource("1_glv2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47844684, 0.16378903, -1.2671664)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1048324530]
 
@@ -20,9 +37,5 @@ shape = SubResource("WorldBoundaryShape3D_isk0n")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=265569707]
 environment = SubResource("Environment_isk0n")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment" unique_id=907052004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.024307, 0.89327145, 1.3285813)
-mesh = SubResource("CylinderMesh_isk0n")
-
-[node name="Player" parent="WorldEnvironment" unique_id=2120135363 instance=ExtResource("1_glv2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6711769, 1, -0.48864913)
+[node name="Artifact1" parent="." unique_id=822759224 instance=ExtResource("2_uu6xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
